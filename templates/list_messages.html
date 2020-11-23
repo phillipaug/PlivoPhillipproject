@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for message in messages | reverse %}
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    {% if message.sender %}
+                        <small class="text-muted">To</small>
+                    {% else %}
+                        <small class="text-muted">From</small>
+                    {% endif %}
+                    <a class="mr-2" href="#">{{ message.pnumber }}</a>
+                    <small class="text-muted">at {{ message.time }}</small>
+                </div>
+                <h2><a class="article-title" href="#">{{ message.message }}</a></h2>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
+{% block side %}
+    <div class="content-section">    
+        <h3>Filters</h3>
+        <p class='text-muted'>
+            <form action="/list-messages" method="post">
+                <label for="pnumber">Phone Number:</label>
+                <select id="pnumber" name="pnumber">
+                    <option value={null} selected disabled hidden>All Numbers</option>
+                    {% for pnumber in pnumbers %}
+                        <option>{{pnumber}}</option>
+                    {% endfor %}
+                </select>
+                <br><br>
+                <label for="date">Start Date:</label> 
+                <input type="date" id="sdate" name="sdate"> </input><br> 
+                <label for="date">End Date:</label>
+                <input type="date" id="edate" name="edate"> </input><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </p>
+    </div>
+{% endblock side %}

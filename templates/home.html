@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <div class="media">
+      <img class="rounded-circle account-img" src="{{ image_file }}">
+      <div class="media-body">
+        <h2 class="account-heading">Phillip Cardoso</h2>
+        <p class="text-secondary">Your Email</p> 
+        <p class="text-secondary">Your Phone Number</p> 
+    
+        <br>
+
+      </div>
+    </div>
+</div>
+<div class="content-section">
+    <div class="media">
+        <div class="media-body">
+          <p class="feature-heading">Future Features
+          <ul>
+            <li>Country Code Selector</li>
+            <li>Contact List</li>
+            <li>Message Search</li>
+            <li>Conversations</li>
+            <li>Alerts</li>
+            <li>Group SMS</li>
+            <li>User Accounts</li>
+          </ul>
+        </p>
+        <p class="feature-heading">Code Changes</p>
+        <ul>
+            <li>Clean up the code</li>
+            <li>Split the code into packages</li>
+            <li>User management</li>
+            <li>Message History Pagination</li>
+          </ul>
+        </div>
+      </div>
+</div>
+{% endblock %}
+{% block side %}
+    <div class="content-section"> 
+        <p class="feature-heading">About Me</p>
+        <p class="text-3">Hi, i'm Phillip! i am writing this project for my technical interview!
+            </p>
+        <p class="feature-heading">About this Web App</p>
+        <p class="text-3">This web app allows you to send and receive SMS using a rented Plivo phone number, 
+            and the Plivo Messaging API. You can also filter and view your message history.</p>
+    </div>
+{% endblock side %}
